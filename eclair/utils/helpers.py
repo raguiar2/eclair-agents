@@ -586,7 +586,7 @@ def fetch_openai_vision_completion(
             + [{"type": "text", "text": prompt}],
         },
     ]
-    return _fetch_openai_completion(messages, model="gpt-4-vision-preview", **kwargs)
+    return _fetch_openai_completion(messages, model="gpt-4o-mini", **kwargs)
 
 
 def is_coords_within_element(x: float, y: float, element: Dict[str, float]):
@@ -860,7 +860,7 @@ def load_files_for_task(path_to_task_dir: str) -> Inputs:
 
     # Load model
     model_kwargs = {
-        "model": "gpt-4-vision-preview",
+        "model": "gpt-4o-mini",
         "temperature": 0.0,
     }
     

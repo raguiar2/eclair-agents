@@ -225,7 +225,7 @@ def helper_task_completion(gt_trace: Dict[str, Any], task_descrip: str, sop: str
     }
     # Feed (S, A, S', A', S'', A'', ...) -- i.e. all screenshots at once
     messages: List[str] = [intro_prompt] + prompt_s_a_sequence + [close_prompt]
-    pred_raw_response: str = _fetch_openai_completion(messages, model='gpt-4-vision-preview', temperature=0.0)
+    pred_raw_response: str = _fetch_openai_completion(messages, model='gpt-4o-mini', temperature=0.0)
 
     # Evaluate
     try:
@@ -306,7 +306,7 @@ def helper_task_trajectory(gt_trace: Dict[str, Any], task_descrip, sop: str, gt_
     }
     # Feed (S, A, S', A', S'', A'', ...) -- i.e. all screenshots at once
     messages: List[str] = [intro_prompt] + prompt_s_a_sequence + [close_prompt]
-    pred_raw_response: str = _fetch_openai_completion(messages, model='gpt-4-vision-preview', temperature=0.0)
+    pred_raw_response: str = _fetch_openai_completion(messages, model='gpt-4o-mini', temperature=0.0)
 
     # Evaluate
     try:

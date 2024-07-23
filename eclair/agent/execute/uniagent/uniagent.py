@@ -112,7 +112,7 @@ class UniAgent(BaseClass):
             response = client.chat.completions.create(
                 messages=messages,
                 max_tokens=4096,
-                model='gpt-4-vision-preview',
+                model='gpt-4o-mini',
                 temperature=0,
             )
             response: str = response.choices[0].message.content

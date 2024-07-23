@@ -61,7 +61,7 @@ class ActuationSelector(BaseClass):
         filtered_json_state: str = fetch_openai_vision_completion(
             filtered_json_prompt,
             [screen_shot],
-            temperature=0.0,  # model="gpt-4-vision-preview"
+            temperature=0.0,  # model="gpt-4o-mini"
         )
         # else:
         # filtered_json_state: str = fetch_openai_text_completion(
@@ -86,7 +86,7 @@ class ActuationSelector(BaseClass):
             response: str = fetch_openai_vision_completion(
                 prompt,
                 [screen_shot],
-                temperature=0.0,  # model="gpt-4-vision-preview"
+                temperature=0.0,  # model="gpt-4o-mini"
             )
         else:
             response: str = fetch_openai_text_completion(

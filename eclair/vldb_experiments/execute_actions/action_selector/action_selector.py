@@ -62,7 +62,7 @@ class ActionSelectorL1(BaseClass):
             response: str = fetch_openai_vision_completion(
                 prompt,
                 [screen_shot],
-                temperature=0.0,  # model="gpt-4-vision-preview"
+                temperature=0.0,  # model="gpt-4o-mini"
             )
             print(response)
         else:

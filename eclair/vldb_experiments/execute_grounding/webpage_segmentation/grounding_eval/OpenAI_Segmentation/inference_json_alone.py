@@ -106,7 +106,7 @@ def run_inference(dataset_dir):
     }
 
     payload = {
-      "model": "gpt-4-vision-preview",
+      "model": "gpt-4o-mini",
       "messages": [
         {
           "role": "user",

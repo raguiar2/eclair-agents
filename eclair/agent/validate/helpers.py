@@ -446,7 +446,7 @@ def _fetch_completion(
     if model == "GPT4":
         if not model_name:
             model_name: str = (
-                "gpt-4-0125-preview" if not is_image else "gpt-4-vision-preview"
+                "gpt-4-0125-preview" if not is_image else "gpt-4o-mini"
             )
         response: str = _fetch_openai_completion(
             messages, model=model_name, temperature=0.0

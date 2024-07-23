@@ -196,7 +196,7 @@ def generate_sop_from_demo(path_to_demo_folder: str,
             # Fetch completion
             try:
                 new_messages = [ { key: val for key,val in m.items() if key != 'path_to_screenshot' } for m in messages if m is not None]
-                response: str = _fetch_openai_completion(new_messages, model='gpt-4-vision-preview', temperature=0.0)
+                response: str = _fetch_openai_completion(new_messages, model='gpt-4o-mini', temperature=0.0)
             except Exception as e:
                 print(f"Error for task_descrip={task_descrip} | demo_name={demo_name} | i={i}: {e}")
                 raise e
@@ -206,7 +206,7 @@ def generate_sop_from_demo(path_to_demo_folder: str,
         # Feed (S, A, S', A', S'', A'', ...) -- i.e. all screenshots at once
         messages: List[str] = [intro_prompt] + prompt_s_a_sequence + [close_prompt]
         try:
-            response: str = _fetch_openai_completion(messages, model='gpt-4-vision-preview', temperature=0.0)
+            response: str = _fetch_openai_completion(messages, model='gpt-4o-mini', temperature=0.0)
         except Exception as e:
             print(f"Error for task_descrip={task_descrip} | demo_name={demo_name}: {e}")
             raise e

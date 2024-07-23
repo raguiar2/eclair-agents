@@ -171,13 +171,13 @@ if __name__ == "__main__":
             for i in range(0, len(prompt_s_a_sequence)-2, 2):
                 messages: List[str] = [intro_prompt] + prompt_s_a_sequence[i:i+3] + [close_prompt]
                 assert len(messages) == 1 + 3 + 1, f"Expected 5 prompts, got {len(messages)}"
-                response: str = _fetch_openai_completion(messages, model='gpt-4-vision-preview', temperature=0.0)
+                response: str = _fetch_openai_completion(messages, model='gpt-4o-mini', temperature=0.0)
                 responses.append(response)
             response: str = "\n>>>>>>>>>>>\n".join(responses)
         else:
             # Feed (S, A, S', A', S'', A'', ...) -- i.e. all screenshots at once
             messages: List[str] = [intro_prompt] + prompt_s_a_sequence + [close_prompt]
-            response: str = _fetch_openai_completion(messages, model='gpt-4-vision-preview', temperature=0.0)
+            response: str = _fetch_openai_completion(messages, model='gpt-4o-mini', temperature=0.0)
     else:
         raise ValueError("Must specify at least one of --is_td, --is_td_kf, --is_td_kf_act")
 
